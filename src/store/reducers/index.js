@@ -4,12 +4,14 @@ import {
   GET_HOTEL_LIST_ERROR,
 } from '@actions/types';
 
-const initialState = {
+export const initialState = {
   hotelList: {
     isLoading: false,
     isSucces: false,
     isError: false,
     data: null,
+    destination: '',
+    totalCount: '',
     errorDetail: null,
   },
 };
@@ -32,6 +34,8 @@ const reducer = (state = initialState, action) => {
           ...initialState.hotelList,
           isSucces: true,
           data: action.payload.searchResults.results,
+          destination: action.payload.header,
+          totalCount: action.payload.totalCount,
         },
       };
     }

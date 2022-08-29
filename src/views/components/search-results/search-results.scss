@@ -1,0 +1,12 @@
+@import '@styles/vars';
+
+.SearchResults {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $lg;
+
+  &__dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

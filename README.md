@@ -2,7 +2,7 @@
 
 ## Deploy URLs
 
- [Production](technical-test-hotels4-2 link vercel)
+ [Production](https://technical-test-hotels4-2.vercel.app/)
 
 
 ## Available Scripts
