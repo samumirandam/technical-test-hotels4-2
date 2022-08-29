@@ -6,8 +6,25 @@
   margin-bottom: $lg;
   align-self: start;
 
-  &__dates {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  &__title {
+    margin-bottom: $xs;
+  }
+
+  &__people {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: $xs;
+  }
+
+  &__date {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: $xxs;
+  }
+
+  &__results {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: $md;
   }
 }
