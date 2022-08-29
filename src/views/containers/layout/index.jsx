@@ -2,13 +2,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import Header from '@components/header';
+import Header from '@components/header';
 
-// import './layout.scss';
+import './layout.scss';
 
 const Layout = ({ children }) => (
   <div className="Layout" data-testid="Layout">
-    {/* <Header /> */}
+    <Header />
     <main>{children}</main>
   </div>
 );

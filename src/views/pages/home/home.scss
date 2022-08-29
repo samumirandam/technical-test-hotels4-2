@@ -2,13 +2,4 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
-
-  &__tabs {
-    margin-bottom: 64px;
-  }
-  &__filter {
-    align-self: start;
-    margin-bottom: 38px;
-  }
 }

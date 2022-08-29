@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for Home page component Should renders the same component 1`] = `
+<div>
+  <section
+    class="Home"
+    data-testid="Home"
+  >
+    <div
+      class="SearchResults"
+    >
+      <h1
+        class="SearchResults__title"
+      >
+        Hoteles en:
+         
+         
+      </h1>
+      <p />
+    </div>
+    <section
+      class="HotelList"
+    />
+  </section>
+</div>
+`;

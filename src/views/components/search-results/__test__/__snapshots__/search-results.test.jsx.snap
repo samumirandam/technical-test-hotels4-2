@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for SearchResults component Should renders the same component 1`] = `
+<div>
+  <div
+    class="SearchResults"
+  >
+    <h1
+      class="SearchResults__title"
+    >
+      Hoteles en:
+       
+       
+    </h1>
+    <p />
+  </div>
+</div>
+`;
