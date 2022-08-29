@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '@ui/button';
+import Badge from '@ui/badge';
 
 import './hotel-card.scss';
 
@@ -36,7 +37,7 @@ const HotelCard = ({
         <div className="HotelCard__badges">
           {badges.map((badge, index) => (
             // eslint-disable-next-line react/no-array-index-key
-            <p key={`badge-${id}-${index}`}>badges</p>
+            <Badge key={`badge-${id}-${index}`}>{badge}</Badge>
           ))}
         </div>
       </div>

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for HotelCard component Should renders the same component 1`] = `
+<div>
+  <div
+    class="HotelCard"
+  >
+    <figure>
+      <img
+        alt=""
+        src=""
+      />
+    </figure>
+    <div
+      class="HotelCard__content"
+    >
+      <div>
+        <p
+          class="HotelCard__title"
+        />
+        <div
+          class="HotelCard__price-container"
+        >
+          <p
+            class="HotelCard__price"
+          />
+          <p
+            class="HotelCard__price-info"
+          />
+        </div>
+        <p
+          class="HotelCard__total-price"
+        />
+        <div
+          class="HotelCard__raiting-container"
+        >
+          <p
+            class="HotelCard__raiting"
+          />
+          <p
+            class="HotelCard__opinions"
+          />
+        </div>
+        <div
+          class="HotelCard__badges"
+        />
+      </div>
+      <button
+        class="Button HotelCard__secret-price"
+        type="button"
+      >
+        Secret price available
+      </button>
+    </div>
+  </div>
+</div>
+`;

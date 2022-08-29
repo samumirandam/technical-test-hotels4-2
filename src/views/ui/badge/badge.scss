@@ -1,0 +1,10 @@
+@import '@styles/vars';
+
+.Badge {
+  box-shadow: $box-shadow-flat;
+  padding: $xxs $xs;
+  margin-right: $xs;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
