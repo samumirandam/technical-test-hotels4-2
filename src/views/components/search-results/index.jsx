@@ -27,14 +27,16 @@ const SearchResults = ({
       persons
     </p>
     )}
-    {checkIn && checkOut && (
-      <div className="SearchResults__dates">
-        <p>Check in:</p>
-        <p>{checkIn}</p>
-        <p>Check out:</p>
-        <p>{checkOut}</p>
-      </div>
-    )}
+    <p className="SearchResults__date">
+      Check in:
+      {' '}
+      {checkIn}
+    </p>
+    <p className="SearchResults__date">
+      Check out:
+      {' '}
+      {checkOut}
+    </p>
     <p />
     {pageSize && totalResults && (
       <p className="SearchResults__results">

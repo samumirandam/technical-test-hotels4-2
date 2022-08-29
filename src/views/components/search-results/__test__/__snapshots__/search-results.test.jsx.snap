@@ -12,6 +12,18 @@ exports[`Test for SearchResults component Should renders the same component 1`] 
        
        
     </h1>
+    <p
+      class="SearchResults__date"
+    >
+      Check in:
+       
+    </p>
+    <p
+      class="SearchResults__date"
+    >
+      Check out:
+       
+    </p>
     <p />
   </div>
 </div>
