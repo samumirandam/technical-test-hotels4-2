@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable default-param-last */
 import {
   GET_HOTEL_LIST_LOADING,
   GET_HOTEL_LIST_SUCCESS,
@@ -11,6 +13,7 @@ export const initialState = {
     isError: false,
     data: null,
     destination: '',
+    pagination: {},
     totalCount: '',
     errorDetail: null,
   },
@@ -35,7 +38,8 @@ const reducer = (state = initialState, action) => {
           isSucces: true,
           data: action.payload.searchResults.results,
           destination: action.payload.header,
-          totalCount: action.payload.totalCount,
+          pagination: action.payload.searchResults.pagination,
+          totalCount: action.payload.searchResults.totalCount,
         },
       };
     }

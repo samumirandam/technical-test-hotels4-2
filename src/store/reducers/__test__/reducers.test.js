@@ -34,9 +34,10 @@ describe('Test for Reducers', () => {
     const payload = {
       searchResults: {
         results: [],
+        totalCount: 1,
+        pagination: {},
       },
       header: 'test header',
-      totalCount: 1,
     };
     const action = {
       type: GET_HOTEL_LIST_SUCCESS,
@@ -49,7 +50,8 @@ describe('Test for Reducers', () => {
         isSucces: true,
         data: payload.searchResults.results,
         destination: payload.header,
-        totalCount: payload.totalCount,
+        totalCount: payload.searchResults.totalCount,
+        pagination: payload.searchResults.pagination,
       },
     };
     expect(reducer(initialState, action)).toEqual(expected);

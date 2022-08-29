@@ -13,18 +13,18 @@ const SearchResults = ({
 }) => (
   <div className="SearchResults">
     <h1 className="SearchResults__title">
-      Hoteles en:
+      Hotels in:
       {' '}
       {destination}
       {' '}
     </h1>
     {adults && (
     <p className="SearchResults__people">
-      Para
+      For
       {' '}
       {adults}
       {' '}
-      personas
+      persons
     </p>
     )}
     {checkIn && checkOut && (
@@ -56,7 +56,7 @@ SearchResults.propTypes = {
   checkIn: PropTypes.string,
   checkOut: PropTypes.string,
   pageSize: PropTypes.string,
-  totalResults: PropTypes.string,
+  totalResults: PropTypes.number,
 };
 
 SearchResults.defaultProps = {
@@ -65,7 +65,7 @@ SearchResults.defaultProps = {
   checkIn: '',
   checkOut: '',
   pageSize: '',
-  totalResults: '',
+  totalResults: 0,
 };
 
 export default SearchResults;

@@ -23,6 +23,7 @@ const Home = () => {
 
   const hotelList = useSelector((state) => state.hotelList?.data);
   const destination = useSelector((state) => state.hotelList?.destination);
+  // const pagination = useSelector((state) => state.hotelList?.pagination);
   const totalCount = useSelector((state) => state.hotelList?.totalCount);
   const isLoading = useSelector((state) => state.hotelList?.isLoading);
   const isError = useSelector((state) => state.hotelList?.isError);
@@ -73,12 +74,18 @@ const Home = () => {
           && hotelList.map((hotel) => (
             <HotelCard
               key={hotel.id}
+              id={hotel.id}
               image={hotel.optimizedThumbUrls?.srpDesktop}
               name={hotel.name}
               pricePerDay={hotel.ratePlan?.price?.current}
-              totalPrice={hotel.ratePlan?.price?.fullyBundledPricePerStay}
+              pricePerDayInfo={hotel.ratePlan?.price?.info}
+              totalPrice={hotel.ratePlan?.price?.fullyBundledPricePerStay.replaceAll(
+                '&nbsp;',
+                ' ',
+              )}
               raiting={`${hotel.guestReviews?.rating}/${hotel.guestReviews?.scale}`}
-              opinions={hotel.guestReviews?.total}
+              opinions={`(${hotel.guestReviews?.total} opinions)`}
+              badges={['fully refundable', 'collect stamps']}
             />
           ))}
       </HotelList>

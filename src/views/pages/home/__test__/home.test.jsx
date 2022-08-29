@@ -15,7 +15,7 @@ const setup = (properties = {}) => {
 describe('Test for Home page component', () => {
   test('Should render without errors', () => {
     setup();
-    expect(screen.getByText('Hoteles en:')).toBeTruthy();
+    expect(screen.getByText('Hotels in:')).toBeTruthy();
   });
 
   test('Should renders the same component', () => {
@@ -30,7 +30,7 @@ describe('Test for Home page component', () => {
       },
     };
     setup(props);
-    expect(screen.getByText('Hoteles en:')).toBeTruthy();
+    expect(screen.getByText('Hotels in:')).toBeTruthy();
   });
 
   test('Should render loading state', () => {
