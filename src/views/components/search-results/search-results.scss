@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: $lg;
+  align-self: start;
 
   &__dates {
     display: grid;

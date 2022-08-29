@@ -5,9 +5,12 @@ import { useParams } from 'react-router-dom';
 
 import { getHotelListAction } from '@actions';
 
+import HotelList from '@containers/hotel-list';
+
 import SearchResults from '@components/search-results';
 import Loader from '@components/loader';
 import Error from '@components/error';
+import HotelCard from '@components/hotel-card';
 
 import './home.scss';
 
@@ -48,7 +51,9 @@ const Home = () => {
         pageSize={pageSize}
         totalResults={totalCount}
       />
-      {hotelList && hotelList.map((hotel, index) => <p key={index}>Hotel</p>)}
+      <HotelList>
+        {hotelList && hotelList.map((hotel) => <HotelCard key={hotel.id} />)}
+      </HotelList>
       {isLoading && <Loader />}
       {isError && <Error error={errorDetail} />}
     </section>

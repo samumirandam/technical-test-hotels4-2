@@ -1,0 +1,12 @@
+@import "@styles/vars";
+
+.HotelCard {
+  border-radius: 12px;
+  background: $back-ground-flat;
+  box-shadow: $box-shadow-flat;
+
+  figure {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+}

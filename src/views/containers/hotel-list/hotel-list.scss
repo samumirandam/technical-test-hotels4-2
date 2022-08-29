@@ -1,0 +1,19 @@
+@import '@styles/vars';
+
+.HotelList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $lg;
+}
+
+@media (min-width: 768px) {
+  .HotelList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .HotelList {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

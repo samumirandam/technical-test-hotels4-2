@@ -18,6 +18,9 @@ exports[`Test for Home page component Should renders the same component 1`] = `
       </h1>
       <p />
     </div>
+    <section
+      class="HotelList"
+    />
   </section>
 </div>
 `;
