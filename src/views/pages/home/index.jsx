@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { getHotelListAction } from '@actions';
 
@@ -16,8 +16,10 @@ import './home.scss';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { destinationId, pageNumber, pageSize, checkIn, checkOut, adults1 } =
-    useParams();
+  const navigate = useNavigate();
+  const {
+    destinationId, pageNumber, pageSize, checkIn, checkOut, adults1,
+  } = useParams();
 
   const hotelList = useSelector((state) => state.hotelList?.data);
   const destination = useSelector((state) => state.hotelList?.destination);
@@ -26,20 +28,35 @@ const Home = () => {
   const isError = useSelector((state) => state.hotelList?.isError);
   const errorDetail = useSelector((state) => state.hotelList?.errorDetail);
 
-  console.log(
-    '🚀 ~ file: index.jsx ~ line 17 ~ Home ~ adults1',
-    destinationId,
-    pageNumber,
-    pageSize,
-    checkIn,
-    checkOut,
-    adults1
-  );
+  useEffect(() => {
+    if (
+      !(
+        destinationId
+        || pageNumber
+        || pageSize
+        || checkIn
+        || checkOut
+        || adults1
+      )
+    ) {
+      navigate(
+        '/destinationId/1506246/pageNumber/1/pageSize/12/checkIn/2022-10-10/checkOut/2022-10-15/adults1/1',
+        { replace: true },
+      );
+    }
+  }, [destinationId, pageNumber, pageSize, checkIn, checkOut, adults1]);
 
   useEffect(() => {
-    const payload = {};
+    const payload = {
+      destinationId,
+      pageNumber,
+      pageSize,
+      checkIn,
+      checkOut,
+      adults1,
+    };
     dispatch(getHotelListAction(payload));
-  }, []);
+  }, [destinationId, pageNumber, pageSize, checkIn, checkOut, adults1]);
 
   return (
     <section className="Home" data-testid="Home">
@@ -52,7 +69,18 @@ const Home = () => {
         totalResults={totalCount}
       />
       <HotelList>
-        {hotelList && hotelList.map((hotel) => <HotelCard key={hotel.id} />)}
+        {hotelList
+          && hotelList.map((hotel) => (
+            <HotelCard
+              key={hotel.id}
+              image={hotel.optimizedThumbUrls?.srpDesktop}
+              name={hotel.name}
+              pricePerDay={hotel.ratePlan?.price?.current}
+              totalPrice={hotel.ratePlan?.price?.fullyBundledPricePerStay}
+              raiting={`${hotel.guestReviews?.rating}/${hotel.guestReviews?.scale}`}
+              opinions={hotel.guestReviews?.total}
+            />
+          ))}
       </HotelList>
       {isLoading && <Loader />}
       {isError && <Error error={errorDetail} />}

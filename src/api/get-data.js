@@ -6,6 +6,9 @@ export const getData = async (dispatch, steps, payload) => {
   dispatch(steps.request());
   try {
     const response = await axiosInstance.get(payload.method);
+    if (response.data.result === 'ERROR') {
+      throw new Error(response.data.error_message);
+    }
     dispatch(steps.success(response));
   } catch (error) {
     dispatch(steps.error(error.message));
