@@ -15,6 +15,17 @@ const App = () => (
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
+          <Route path="destinationId/:destinationId" element={<Home />}>
+            <Route path="pageNumber/:pageNumber" element={<Home />}>
+              <Route path="pageSize/:pageSize" element={<Home />}>
+                <Route path="checkIn/:checkIn" element={<Home />}>
+                  <Route path="checkOut/:checkOut" element={<Home />}>
+                    <Route path="adults1/:adults1" element={<Home />} />
+                  </Route>
+                </Route>
+              </Route>
+            </Route>
+          </Route>
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

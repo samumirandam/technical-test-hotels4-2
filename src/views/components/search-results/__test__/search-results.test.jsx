@@ -15,7 +15,7 @@ const setup = (properties = {}) => {
 describe('Test for SearchResults component', () => {
   test('Should render without errors', () => {
     setup();
-    expect(screen.getByText('Hoteles en:')).toBeTruthy();
+    expect(screen.getByText('Hotels in:')).toBeTruthy();
   });
 
   test('Should renders the same component', () => {
@@ -33,7 +33,7 @@ describe('Test for SearchResults component', () => {
       totalResults: '1',
     };
     setup(props);
-    expect(screen.getByText(`Hoteles en: ${props.destination}`)).toBeTruthy();
-    expect(screen.getByText(`Para ${props.adults} personas`)).toBeTruthy();
+    expect(screen.getByText(`Hotels in: ${props.destination}`)).toBeTruthy();
+    expect(screen.getByText(`For ${props.adults} persons`)).toBeTruthy();
   });
 });

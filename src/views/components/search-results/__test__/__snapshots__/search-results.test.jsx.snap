@@ -8,7 +8,7 @@ exports[`Test for SearchResults component Should renders the same component 1`] 
     <h1
       class="SearchResults__title"
     >
-      Hoteles en:
+      Hotels in:
        
        
     </h1>

@@ -3,11 +3,16 @@
 .Layout {
   main {
     display: grid;
-    grid-template-columns: auto minmax(320px, 1440px) auto;
+    grid-template-columns: auto minmax(320px, 1024px) auto;
 
     > section {
-      padding: 0 $lg;
+      padding: 0 $lg $lg $lg;
       grid-column: 2 / 3;
     }
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 2.4rem;
   }
 }

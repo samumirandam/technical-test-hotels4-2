@@ -1,12 +1,81 @@
-@import "@styles/vars";
+@import '@styles/vars';
 
 .HotelCard {
   border-radius: 12px;
   background: $back-ground-flat;
   box-shadow: $box-shadow-flat;
+  display: flex;
+  flex-direction: column;
 
   figure {
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
+  }
+
+  &__content {
+    height: 100%;
+    padding: $sm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 00;
+    margin-bottom: $sm;
+  }
+
+  &__price-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: $xxs;
+  }
+
+  &__price {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: $xxs;
+  }
+
+  &__price-info {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $color-dark-grey;
+  }
+
+  &__total-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: $xs;
+    color: $color-dark-grey;
+  }
+
+  &__raiting-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: $xs;
+  }
+
+  &__raiting {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-right: $xxs;
+  }
+
+  &__opinions {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: $color-dark-grey;
+  }
+
+  &__badges {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__secret-price {
+    width: 100%;
+    margin-top: $md;
   }
 }

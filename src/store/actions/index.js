@@ -23,7 +23,6 @@ export const getHotelListSteps = {
 
 export const getHotelListAction = (payload) => (dispatch) => {
   getData(dispatch, getHotelListSteps, {
-    method:
-      'list?destinationId=1506246&pageNumber=1&pageSize=10&checkIn=2022-10-10&checkOut=2022-10-15&adults1=1',
+    method: `list?destinationId=${payload.destinationId}&pageNumber=${payload.pageNumber}&pageSize=${payload.pageSize}&checkIn=${payload.checkIn}&checkOut=${payload.checkOut}&adults1=${payload.adults1}`,
   });
 };
