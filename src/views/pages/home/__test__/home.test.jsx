@@ -32,4 +32,25 @@ describe('Test for Home page component', () => {
     setup(props);
     expect(screen.getByText('Hoteles en:')).toBeTruthy();
   });
+
+  test('Should render loading state', () => {
+    const props = {
+      hotelList: {
+        isLoading: true,
+      },
+    };
+    setup(props);
+    expect(screen.getByTestId('Loader')).toBeTruthy();
+  });
+
+  test('Should render error state', () => {
+    const props = {
+      hotelList: {
+        isError: true,
+        errorDetail: 'test error',
+      },
+    };
+    setup(props);
+    expect(screen.getByText('test error')).toBeTruthy();
+  });
 });
